@@ -3,7 +3,10 @@ services:
     name: squadvault
     env: node
     plan: free
-    buildCommand: npm install && npm run build
+    # --include=dev is required: NODE_ENV=production (set below) makes npm skip devDependencies
+    # by default, but the build needs typescript/@types/*/vite from there. The app's own
+    # "start" script sets NODE_ENV=production for the runtime process regardless.
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
