@@ -8,7 +8,9 @@ A group-escrow app that eliminates "debt lag" when friends split large shared co
 
 Done: repo scaffold, data model, dev auth, the pledge/funding lifecycle on real Stripe test-mode PaymentIntents, all three edge-case flows (price jump, dropout, merchant rejection) as real state transitions, the execution layer (real Stripe Issuing test-mode virtual cards), the public **Logic Simulator** at `/simulator`, and a deploy-ready build (see Deployment below).
 
-**Live demo:** _TODO — paste the Render URL here once deployed._
+**Live demo:** [squadvault-op10.onrender.com](https://squadvault-op10.onrender.com) · try the [Logic Simulator](https://squadvault-op10.onrender.com/simulator) directly, no login needed.
+
+Note: this runs on Render's free tier, which spins down after inactivity — the first request after a while can take 30–50s to wake back up.
 
 ## Architecture
 
@@ -126,4 +128,4 @@ This repo also includes a `.replit` config so it can be imported and run as-is. 
 3. ~~Edge-case engine: price jump, last-minute dropout, merchant rejection as real state transitions + event logging~~ ✅
 4. ~~Execution layer: virtual card (real Stripe Issuing test mode) + Proof-of-Funds PDF~~ ✅
 5. ~~Public Logic Simulator — no login, click a scenario, watch the state machine step through it live~~ ✅
-6. Polish, deploy (Render/Replit + Neon), capture live demo URL — build verified locally end-to-end; live URL pending deploy
+6. ~~Polish, deploy (Render + Neon), capture live demo URL~~ ✅
