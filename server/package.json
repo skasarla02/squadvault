@@ -1,0 +1,40 @@
+{
+  "name": "@squadvault/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "@squadvault/shared": "*",
+    "connect-pg-simple": "^10.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.45.2",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "pdf-lib": "^1.17.1",
+    "pg": "^8.13.1",
+    "stripe": "^17.4.0",
+    "ws": "^8.18.0",
+    "zod": "3.24.1"
+  },
+  "devDependencies": {
+    "@types/connect-pg-simple": "^7.0.3",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/express-session": "^1.18.0",
+    "@types/node": "^22.10.1",
+    "@types/pg": "^8.11.10",
+    "@types/ws": "^8.5.13",
+    "drizzle-kit": "^0.31.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

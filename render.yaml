@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: squadvault
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Paste your Neon pooled connection string (see README > Local setup).
+      - key: DATABASE_URL
+        sync: false
+      # Render generates a random value for this automatically.
+      - key: SESSION_SECRET
+        generateValue: true
+      # Stripe TEST MODE secret key (sk_test_...). Never use a live key here.
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      # Stripe TEST MODE publishable key (pk_test_...) — baked into the client bundle at build time.
+      - key: VITE_STRIPE_PUBLISHABLE_KEY
+        sync: false

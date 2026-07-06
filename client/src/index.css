@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: hsl(240 6% 20%);
+  --color-background: hsl(240 10% 6%);
+  --color-foreground: hsl(0 0% 96%);
+  --color-muted: hsl(240 6% 14%);
+  --color-muted-foreground: hsl(240 5% 65%);
+  --color-primary: hsl(160 84% 45%);
+  --color-primary-foreground: hsl(160 84% 8%);
+  --color-card: hsl(240 8% 9%);
+  --color-card-foreground: hsl(0 0% 96%);
+  --color-destructive: hsl(0 72% 51%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-input: hsl(240 6% 20%);
+  --color-ring: hsl(160 84% 45%);
+  --font-serif: "Instrument Serif", "Georgia", serif;
+}
+
+body {
+  @apply bg-background text-foreground;
+  margin: 0;
+}
+
+/* Simulator-only decorative utilities */
+.bg-aurora {
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 0%, hsl(160 84% 30% / 0.35), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 85% 15%, hsl(180 70% 35% / 0.22), transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 100%, hsl(160 60% 20% / 0.18), transparent 70%);
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(hsl(0 0% 100% / 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
